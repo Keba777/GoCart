@@ -7,14 +7,14 @@ import 'package:gocart/features/authentication/presentation/widgets/buttons.dart
 import 'package:gocart/features/authentication/presentation/widgets/text_field.dart';
 
 @RoutePage()
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 80),
             child: Center(
-              // child: SvgPicture.asset(AppAssets.logo, width: 80,),
               child: Text(
                 "CartGo",
                 style: TextStyles.titleScreen,
@@ -54,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Welcome Back!",
+                          "Get Started",
                           style: TextStyles.formHeading,
                         ),
                         const Padding(
@@ -78,32 +77,30 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsets.only(bottom: 40),
-                          child: Align(
-                            alignment: Alignment.bottomRight,
-                            child: CustomTextButton(
-                              btnText: "Forget your password ?",
-                              routeName: ForgotPasswordRoute(),
-                            ),
+                          padding: EdgeInsets.only(top: 20, bottom: 50),
+                          child: CustomTextField(
+                            hintText: "Confirm Password",
+                            obscureText: true,
+                            keyboardType: TextInputType.visiblePassword,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 30),
                           child: CustomMainButton(
                             onPressed: () {},
-                            btnText: "Login",
+                            btnText: "Sign Up",
                           ),
                         ),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Don't have account",
+                              "Already have an account",
                               style: TextStyles.formSubheading,
                             ),
                             CustomTextButton(
-                              btnText: "Sign Up",
-                              routeName: SignUpRoute(),
+                              btnText: "Login",
+                              routeName: LoginRoute(),
                             )
                           ],
                         ),
